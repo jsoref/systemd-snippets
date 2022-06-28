@@ -32,6 +32,8 @@ jobs:
         checkout: true
         spell_check_this: check-spelling/spell-check-this@prerelease
         post_comment: 0
+        extra_dictionaries:
+          cspell:html/html.txt
 
   comment:
     name: Report
@@ -49,6 +51,8 @@ jobs:
         checkout: true
         spell_check_this: check-spelling/spell-check-this@prerelease
         task: ${{ needs.spelling.outputs.followup }}
+        extra_dictionaries:
+          cspell:html/html.txt
 
   update:
     name: Update PR
@@ -71,3 +75,5 @@ jobs:
         experimental_apply_changes_via_bot: 1
         checkout: true
         ssh_key: "${{ secrets.CHECK_SPELLING }}"
+        extra_dictionaries:
+          cspell:html/html.txt
