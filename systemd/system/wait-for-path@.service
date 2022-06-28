@@ -1,0 +1,8 @@
+[Unit]
+Description=Wait for '%I'
+
+[Service]
+TimeoutStartSec=infinity
+ExecStartPre=/bin/sh -c 'while [ ! -e %I ]; do /bin/sleep 10; done'
+ExecStart=/bin/echo 'Found %I'
+RemainAfterExit=yes
