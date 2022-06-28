@@ -1,5 +1,8 @@
 # See https://github.com/check-spelling/check-spelling/wiki/Configuration-Examples:-patterns
 
+# stackexchange -- https://stackexchange.com/feeds/sites
+\b(?:askubuntu|serverfault|stack(?:exchange|overflow)|superuser).com/(?:questions/\d+/[a-z-]+|a/)
+
 # acceptable duplicates
 \s(long|LONG) \g{-1}\s
 \@param\s+(\w+)\s+\g{-1}\s
