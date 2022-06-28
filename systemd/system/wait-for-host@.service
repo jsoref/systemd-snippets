@@ -1,0 +1,7 @@
+[Unit]
+After=network-online.target
+Wants=network-online.target
+# https://serverfault.com/questions/867830/systemd-start-service-only-after-dns-is-available
+# https://serverfault.com/a/867845
+[Service]
+ExecStart=/bin/sh -c "until host %I > /dev/null 2> /dev/null; do sleep 1; done"
